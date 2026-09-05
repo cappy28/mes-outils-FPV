@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="FPV//INDEX — outils, calculateurs, ressources techniques, tuning, builds, cartes et actualités FPV."
+    />
+    <meta name="theme-color" content="#11120f" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>FPV//INDEX — Field tools for FPV pilots</title>
+  </head>
+
+  <body>
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+
+    <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+    <div id="boot-screen" class="boot-screen" aria-hidden="true">
+      <div class="boot-screen__mark">
+        <span>FPV</span><i>//</i><span>INDEX</span>
+      </div>
+      <div class="boot-screen__track">
+        <span class="boot-screen__bar"></span>
+      </div>
+      <span class="boot-screen__status">INITIALISATION DU TERRAIN</span>
+    </div>
+
+    <header class="site-header" id="site-header">
+      <a class="brand" href="#top" aria-label="FPV Index — accueil">
+        <span class="brand__primary">FPV</span>
+        <span class="brand__slash">//</span>
+        <span>INDEX</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navigation principale">
+        <a href="#explorer">Explorer</a>
+        <a href="#tools">Calculs</a>
+        <button type="button" data-jump-category="BUILD">Builds</button>
+        <button type="button" data-jump-category="TUNING">Tuning</button>
+        <button type="button" data-jump-category="FLIGHT">Cartes</button>
+        <a href="#news">News / RSS</a>
+      </nav>
+
+      <div class="header-actions">
+        <button
+          class="header-search"
+          type="button"
+          data-search-trigger
+          data-magnetic
+          aria-label="Ouvrir la recherche"
+        >
+          <span>Rechercher</span>
+          <kbd>⌘ K</kbd>
+        </button>
+
+        <button
+          class="index-button"
+          type="button"
+          data-open-menu
+          aria-label="Ouvrir l’index"
+        >
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top">
+        <div class="hero__grid" aria-hidden="true"></div>
+
+        <div class="hero__scene" data-parallax="0.07">
+          <canvas id="hero-canvas" aria-hidden="true"></canvas>
+          <div class="hero__fallback-drone" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div class="hero__copy">
+          <div class="hero__eyebrow">
+            <span class="live-dot"></span>
+            <span>FIELD SYSTEM / ÉDITION 01</span>
+            <span class="hero__date">REV. 05.09.2026</span>
+          </div>
+
+          <h1 class="hero-title">
+            Tout ce qui fait voler.<br />
+            <em>Rien de ce qui fait perdre du temps.</em>
+          </h1>
+
+          <div class="hero__footer">
+            <p>
+              Outils natifs, tuning, builds, firmware, radio, vidéo, cartes et
+              documentation technique — organisés comme un instrument, pas
+              comme un annuaire.
+            </p>
+
+            <button
+              class="primary-action"
+              type="button"
+              data-search-trigger
+              data-magnetic
+            >
+              <span>Entrer dans l’index</span>
+              <span class="primary-action__arrow" aria-hidden="true">↘</span>
+            </button>
+          </div>
+        </div>
+
+        <aside class="hero__telemetry" aria-label="Informations du hub">
+          <div class="telemetry-unit">
+            <span>RESSOURCES</span>
+            <strong id="resource-total">00</strong>
+          </div>
+          <div class="telemetry-unit">
+            <span>OUTILS NATIFS</span>
+            <strong>04</strong>
+          </div>
+          <div class="telemetry-unit">
+            <span>MODE</span>
+            <strong>FIELD</strong>
+          </div>
+        </aside>
+
+        <div class="hero__orbit-label hero__orbit-label--one" aria-hidden="true">
+          <span>4S / 6S</span>
+          <i></i>
+        </div>
+
+        <div class="hero__orbit-label hero__orbit-label--two" aria-hidden="true">
+          <span>BBL / FFT</span>
+          <i></i>
+        </div>
+
+        <div class="scroll-cue" aria-hidden="true">
+          <span>SCROLL TO INDEX</span>
+          <i></i>
+        </div>
+      </section>
+
+      <section class="manifesto section-shell" data-reveal>
+        <div class="section-index">01 / SYSTÈME</div>
+
+        <div class="manifesto__statement">
+          <p class="manifesto__lead">
+            Le FPV ne manque pas d’information.
+            <strong>Il manque un point d’entrée.</strong>
+          </p>
+
+          <div class="manifesto__notes">
+            <p>
+              Nous séparons les références solides du bruit, sans masquer les
+              projets expérimentaux ou les outils de niche.
+            </p>
+            <p>
+              Chaque ressource indique son niveau, son usage et la raison
+              précise pour laquelle elle mérite d’être ouverte.
+            </p>
+          </div>
+        </div>
+
+        <div class="signal-line" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </section>
+
+      <section class="explorer section-shell" id="explorer">
+        <header class="section-heading" data-reveal>
+          <div>
+            <div class="section-index">02 / EXPLORER</div>
+            <h2>Le terrain,<br />entièrement indexé.</h2>
+          </div>
+
+          <p>
+            Recherchez un protocole, une pièce, une opération ou un problème.
+            Les catégories restent des points de passage, jamais des silos.
+          </p>
+        </header>
+
+        <div class="search-console" data-reveal>
+          <label class="search-console__field" for="resource-search">
+            <span class="search-console__prefix">QUERY /</span>
+            <input
+              id="resource-search"
+              type="search"
+              autocomplete="off"
+              spellcheck="false"
+              placeholder="blackbox, ELRS, moteurs, réglementation…"
+            />
+            <button
+              id="clear-search"
+              type="button"
+              aria-label="Effacer la recherche"
+            >
+              ×
+            </button>
+          </label>
+
+          <div class="search-console__meta">
+            <span id="result-count" aria-live="polite">0 résultats</span>
+            <span class="desktop-only">/ ou ⌘K pour chercher</span>
+          </div>
+        </div>
+
+        <div
+          id="category-filters"
+          class="filter-rail"
+          aria-label="Filtrer par catégorie"
+          data-reveal
+        ></div>
+
+        <div class="secondary-filters" data-reveal>
+          <fieldset id="level-filters">
+            <legend>Niveau</legend>
+          </fieldset>
+
+          <button
+            id="favorites-filter"
+            class="filter-toggle"
+            type="button"
+            aria-pressed="false"
+          >
+            <span aria-hidden="true">☆</span>
+            Favoris
+          </button>
+        </div>
+
+        <div id="resource-grid" class="resource-grid"></div>
+
+        <div id="empty-state" class="empty-state" hidden>
+          <span>NO SIGNAL</span>
+          <h3>Aucune ressource ne correspond.</h3>
+          <button type="button" id="reset-filters">Réinitialiser le scan</button>
+        </div>
+      </section>
+
+      <section class="tools section-shell section-shell--dark" id="tools">
+        <header class="section-heading section-heading--dark" data-reveal>
+          <div>
+            <div class="section-index">03 / CALCULS NATIFS</div>
+            <h2>Mesurer avant<br />de souder.</h2>
+          </div>
+
+          <p>
+            Des estimations lisibles, instantanées et volontairement
+            transparentes. Les hypothèses restent visibles.
+          </p>
+        </header>
+
+        <div class="tool-workbench" data-reveal>
+          <div
+            id="tool-tabs"
+            class="tool-tabs"
+            role="tablist"
+            aria-label="Calculateurs"
+          ></div>
+          <div id="tool-panels" class="tool-panels"></div>
+        </div>
+      </section>
+
+      <section class="preflight section-shell" id="flight">
+        <div class="section-index">04 / PREFLIGHT</div>
+
+        <div class="preflight__layout">
+          <div data-reveal>
+            <span class="preflight__kicker">BEFORE ARMING</span>
+            <h2>Un bon spot n’est pas seulement un beau spot.</h2>
+          </div>
+
+          <ol class="preflight-list">
+            <li data-reveal>
+              <span>01</span>
+              <div>
+                <strong>Airspace</strong>
+                <p>
+                  Vérifier les géozones, restrictions temporaires et règles
+                  locales le jour du vol.
+                </p>
+              </div>
+            </li>
+            <li data-reveal>
+              <span>02</span>
+              <div>
+                <strong>Wind</strong>
+                <p>
+                  Lire le vent moyen, les rafales, la direction et leur
+                  évolution sur toute la fenêtre de vol.
+                </p>
+              </div>
+            </li>
+            <li data-reveal>
+              <span>03</span>
+              <div>
+                <strong>RF environment</strong>
+                <p>
+                  Coordonner les canaux vidéo, la puissance et l’ordre
+                  d’allumage lorsque plusieurs pilotes volent.
+                </p>
+              </div>
+            </li>
+            <li data-reveal>
+              <span>04</span>
+              <div>
+                <strong>Recovery</strong>
+                <p>
+                  GPS, buzzer autonome, coordonnées DVR et plan de récupération
+                  avant de pousser la distance.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="news section-shell" id="news">
+        <header class="section-heading" data-reveal>
+          <div>
+            <div class="section-index">05 / LIVE FEEDS</div>
+            <h2>Le signal<br />communautaire.</h2>
+          </div>
+
+          <p>
+            Les flux sont récupérés par une fonction serverless. Aucun article
+            fictif n’est affiché si une source échoue.
+          </p>
+        </header>
+
+        <div id="feed-status" class="feed-status" aria-live="polite">
+          Synchronisation des flux…
+        </div>
+
+        <div id="feed-grid" class="feed-grid"></div>
+
+        <div id="feed-sources" class="feed-sources" data-reveal></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__brand">
+        <span>FPV</span><i>//</i><span>INDEX</span>
+      </div>
+
+      <p>
+        Un field manual vivant pour celles et ceux qui construisent, règlent,
+        cassent, analysent et recommencent.
+      </p>
+
+      <div class="site-footer__meta">
+        <span>CURATION / 05.09.2026</span>
+        <span>VITE + ANIME.JS + THREE.JS</span>
+        <span>NO TRACKING BY DEFAULT</span>
+      </div>
+
+      <a href="#top" class="back-top" aria-label="Retour en haut">↑</a>
+    </footer>
+
+    <nav class="mobile-dock" aria-label="Navigation mobile">
+      <a href="#explorer">
+        <span>⌕</span>
+        Explorer
+      </a>
+      <a href="#tools">
+        <span>±</span>
+        Outils
+      </a>
+      <a href="#news">
+        <span>◫</span>
+        Flux
+      </a>
+      <button type="button" data-favorites-link>
+        <span>☆</span>
+        Favoris
+      </button>
+      <button type="button" data-open-menu>
+        <span>═</span>
+        Index
+      </button>
+    </nav>
+
+    <dialog id="resource-dialog" class="resource-dialog">
+      <div class="resource-dialog__surface">
+        <button
+          class="dialog-close"
+          type="button"
+          data-modal-close
+          aria-label="Fermer"
+        >
+          ×
+        </button>
+
+        <div id="resource-dialog-content"></div>
+      </div>
+    </dialog>
+
+    <dialog id="mobile-menu" class="nav-sheet">
+      <div class="nav-sheet__surface">
+        <div class="nav-sheet__header">
+          <span>INDEX RAPIDE</span>
+          <button
+            type="button"
+            data-close-menu
+            aria-label="Fermer la navigation"
+          >
+            ×
+          </button>
+        </div>
+
+        <nav aria-label="Index rapide">
+          <button type="button" data-jump-category="BUILD">
+            <span>01</span> Build
+          </button>
+          <button type="button" data-jump-category="TUNING">
+            <span>02</span> Tuning
+          </button>
+          <button type="button" data-jump-category="FLIGHT">
+            <span>03</span> Flight / cartes
+          </button>
+          <button type="button" data-jump-category="DIGITAL">
+            <span>04</span> Digital / radio
+          </button>
+          <button type="button" data-jump-category="TOOLS">
+            <span>05</span> Outils externes
+          </button>
+          <button type="button" data-jump-category="MEDIA">
+            <span>06</span> Documentation
+          </button>
+          <a href="#tools"><span>07</span> Calculs natifs</a>
+          <a href="#news"><span>08</span> News / RSS</a>
+        </nav>
+      </div>
+    </dialog>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
